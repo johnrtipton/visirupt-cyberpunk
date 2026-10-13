@@ -1,0 +1,26 @@
+# Keep all generated/local/private material outside public source
+.DS_Store
+scratch/
+context/
+private/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.mobileprovision
+*.ipa
+*.app/
+*.framework/
+*.dylib
+*.metallib
+*.archive
+*.dmg
+*.ips
+*.log
+DerivedData/
+build/
+__pycache__/
+background-transfer-plan.json

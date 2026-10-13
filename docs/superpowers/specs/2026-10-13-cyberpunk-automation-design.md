@@ -1,6 +1,6 @@
 # Cyberpunk AVP automation design
 
-Status: proposed design for human review. Scope approved October 13, 2026; this written specification has not yet been approved for implementation. Commands and paths below describe the proposed interface, not tools that already exist.
+Status: written design approved October 13, 2026. Implementation-plan review and execution-method selection are the next gate. Commands and paths below describe the proposed interface, not tools that already exist.
 
 ## Outcome
 

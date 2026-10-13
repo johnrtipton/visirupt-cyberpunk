@@ -4,8 +4,9 @@
 
 - [x] Record the native M2 Vision Pro gameplay baseline and working controls.
 - [x] Publish the initial workflow, source map and contribution boundaries.
-- [ ] Inventory every external framework/module input and supported game identity.
-- [ ] Document and review the exact local preparation/build sequence for those inputs.
+- [x] Inventory every external framework/module input and supported game identity.
+- [x] Recover and document the local preparation/build sequence and compare it with current artifacts.
+- [ ] Publish reviewed, parameterized proprietary-module converters and standalone provider build targets upstream.
 - [ ] Replace developer-specific paths and signing defaults with explicit user configuration upstream.
 - [ ] Document receiver installation, asset plans, verified resume and host-container integration end to end.
 - [ ] Publish a minimal input-configuration patch with backup/identity checks.

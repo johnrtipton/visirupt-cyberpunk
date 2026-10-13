@@ -5,7 +5,7 @@ Goal: reproduce the working native 2D baseline on another Mac and Apple Vision P
 ## 1. Prepare your own environment
 
 - A legitimate **Mac ARM64 Cyberpunk 2077 2.3** installation matching the supported recipe. The Windows executable is a different target.
-- An Apple Silicon Mac with Xcode and the visionOS SDK, XcodeGen for source projects, make, and uv for Python development checks.
+- An Apple Silicon Mac with Xcode and the visionOS SDK, XcodeGen for source projects, make, uv for Python development checks, and CMake/Ninja for the recovered Curl build.
 - An Apple Vision Pro paired for development, with Developer Mode and your own normal Apple signing/provisioning setup.
 - A keyboard and pointing device for the currently validated controls.
 - Storage for your original game, local build/staging and headset data. The tested original Data set had **110 files / 158,461,863,365 bytes** (about 158.46 GB / 147.58 GiB). Sizes vary with the game build; this is not the complete required free-space budget.
@@ -22,13 +22,13 @@ git rev-parse HEAD
 
 Read its `CHECKPOINT.md` before building. A published reference is `7bd937d683beee6d27336ec3eeb29ca43ab88d89`; newer source can differ. Keep an immutable original game copy and local hashes. Match any adaptation to the exact game build; never apply unverified offsets from another release.
 
-The existing source checkpoint expects separately prepared native provider frameworks and a locally adapted game module. **That preparation is not yet a complete public recipe.** Record the external inputs, their versions/hashes, legal source and build method before claiming a fresh-machine reproduction. Do not download an unofficial game package to fill missing dependencies.
+The existing source checkpoint expects separately prepared native provider frameworks and a locally adapted game module. The [build-input inventory](build-inputs.md) now identifies all ten prebuilt frameworks, the host-built MemoryTrace provider and exact original hashes. [Framework preparation](framework-preparation.md) and [game-module preparation](game-module-preparation.md) recover the commands and transformations. The proprietary conversion tools still need public packaging; record actual input/output identities before claiming a fresh-machine reproduction. Do not download an unofficial game package to fill missing dependencies.
 
 ## 3. Prepare the native host locally
 
 The working host combines authored UIKit/AppKit compatibility adapters, native dependency providers, an adapted local ARM64 module, asset-root mapping and audited engine memory-capacity changes. Supported memory entitlements use normal provisioning. Reservations are virtual address space, not a claim that the headset has that much physical RAM.
 
-Regenerate source projects from XcodeGen specs and configure your own signing team. The checkpoint's host Makefile builds the adapters and host **once its external prerequisites exist**; it is not a standalone build pipeline. The recipe still needs explicit commands for regenerating each required project, preparing providers and adapting the exact original module.
+Regenerate source projects from XcodeGen specs and configure your own signing team. The checkpoint's host Makefile builds the adapters and host **once its external prerequisites exist**; it is not a standalone build pipeline. Use the preparation guides for project-generation/build commands, Security aliases, native Curl options and exact module changes. The metadata converters described there are specifications awaiting parameterized public tools, so this remains a developer workflow.
 
 Keep a distinct known-working 2D build. Never use a VR/debugger experiment as the default user build. Do not alter purchases, entitlement checks or DRM to make startup advance.
 

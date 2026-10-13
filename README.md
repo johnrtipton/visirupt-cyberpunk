@@ -11,6 +11,8 @@ This repository starts the user workflow documentation. The compatibility engine
 ## Start here
 
 - [Setup workflow](docs/setup-workflow.md): prerequisites, local preparation, transfer, signing, installation and acceptance.
+- [Build inputs and preparation order](docs/build-inputs.md): exact original identities and the eleven-framework dependency graph.
+- [Framework preparation](docs/framework-preparation.md) and [game-module preparation](docs/game-module-preparation.md): recovered build commands, transformations and verification gates.
 - [Verified baseline](docs/status.md): tested features, evidence and current limitations.
 - [Architecture and source map](docs/architecture.md): which repository owns each component.
 - [Troubleshooting](docs/troubleshooting.md): preserve assets and diagnose failed stages.

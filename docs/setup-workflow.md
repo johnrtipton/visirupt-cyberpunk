@@ -1,6 +1,6 @@
 # Setup workflow
 
-Goal: reproduce the working native 2D baseline on another Mac and Apple Vision Pro, then offer a dependable end-user guide. This is the first documented workflow; external-framework preparation and parts of deployment still need packaging. Steps below describe the tested architecture and acceptance criteria, without inventing unavailable installation commands.
+Goal: reproduce the working native 2D baseline on another Mac and Apple Vision Pro, then offer a dependable end-user guide. This is the first documented workflow; external-framework preparation and parts of deployment still need packaging. The [native automation preview](automation.md) now supplies reviewed parameterized commands in an engine draft PR; its provisioned signing and independent headset acceptance remain pending. The sections below preserve the architectural/acceptance context of the earlier manual workflow.
 
 ## 1. Prepare your own environment
 

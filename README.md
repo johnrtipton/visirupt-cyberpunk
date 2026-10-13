@@ -6,10 +6,11 @@ Documenting how to reproduce native Cyberpunk 2077 on Apple Vision Pro, and rese
 
 **Current research:** adapting the working game for VR. A separate synthetic immersive scene has demonstrated tracked rendering and user-observed world anchoring/depth on the headset. Integrating headset pose with the game's active camera, true game stereo and spatial controller input remain research milestones.
 
-This repository starts the user workflow documentation. The compatibility engine and host source live in [johnrtipton/visirupt](https://github.com/johnrtipton/visirupt). Its published developer checkpoint still depends on locally prepared external frameworks; a complete fresh-machine installer is not available yet. Cloning either repository alone will not launch the game.
+This repository starts the user workflow documentation. The compatibility engine and host source live in [johnrtipton/visirupt](https://github.com/johnrtipton/visirupt). A [reviewed automation preview](docs/automation.md) now prepares exact matching inputs and source providers in a private workspace. Provisioned signing and independent headset acceptance for that new pipeline remain pending; a complete accepted end-user installer is not available yet. Cloning either repository alone will not launch the game.
 
 ## Start here
 
+- [Native automation preview](docs/automation.md): reviewed source PR, commands and separate acceptance gates.
 - [Setup workflow](docs/setup-workflow.md): prerequisites, local preparation, transfer, signing, installation and acceptance.
 - [Build inputs and preparation order](docs/build-inputs.md): exact original identities and the eleven-framework dependency graph.
 - [Framework preparation](docs/framework-preparation.md) and [game-module preparation](docs/game-module-preparation.md): recovered build commands, transformations and verification gates.

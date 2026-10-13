@@ -8,7 +8,7 @@
 
 **Tech Stack:** Python 3.11+, uv, unittest, XcodeGen, Xcode/clang/vtool/codesign/devicectl, CMake/Ninja, existing Swift/Objective-C/C sources.
 
-**Spec:** [Approved automation design](../specs/2026-10-13-cyberpunk-automation-design.md). Approved October 13, 2026. This implementation plan remains pending human review and execution-method selection.
+**Spec:** [Approved automation design](../specs/2026-10-13-cyberpunk-automation-design.md). Approved October 13, 2026. Native inline execution was approved and the twelve source tasks are implemented in the [automation preview](../../automation.md). Fresh review findings were fixed with regression tests. Physical signing/device and independent reproduction gates remain pending.
 
 ## Global Constraints
 

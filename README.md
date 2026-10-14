@@ -8,6 +8,37 @@ Documenting how to reproduce native Cyberpunk 2077 on Apple Vision Pro, and rese
 
 This repository starts the user workflow documentation. The compatibility engine and host source live in [johnrtipton/visirupt](https://github.com/johnrtipton/visirupt). A [reviewed automation preview](docs/automation.md) now prepares exact matching inputs and source providers in a private workspace. Provisioned signing and independent headset acceptance for that new pipeline remain pending; a complete accepted end-user installer is not available yet. Cloning either repository alone will not launch the game.
 
+## TL;DR: Try the automated install
+
+**Experimental native 2D developer workflow.** You need your own matching **Mac ARM64 Cyberpunk 2077 2.3** copy, an Apple Silicon Mac with Xcode/visionOS SDK **27.0**, XcodeGen, CMake, Ninja and uv, plus your Apple signing team and a paired Vision Pro in Developer Mode. Budget for about **158 GB of game data**, build space and transfer overhead. Signed-device and independent reproduction acceptance remain pending.
+
+```sh
+# The automation source is currently in the engine PR branch.
+git clone --branch feat/native-cyberpunk-pipeline https://github.com/johnrtipton/visirupt.git
+cd visirupt
+
+export GAME='/absolute/path/to/Cyberpunk2077.app'
+export WORKSPACE="$HOME/visirupt-private/cyberpunk" # outside the checkout and original game
+export TEAM='YOURTEAMID'                          # your 10-character Apple team ID
+export DEVICE='YOUR-PAIRED-DEVICE-IDENTIFIER'
+export TRANSPORT='foreground'
+
+make doctor
+make plan
+uv run --no-project python tools/visirupt.py prepare --download-source
+make verify
+make build
+
+# Explicitly install/launch the receiver and transfer your verified assets.
+uv run --no-project python tools/visirupt.py transfer --deploy-receiver --launch-receiver
+make install
+make launch
+```
+
+`--download-source` fetches only the pinned official Curl source; bring your own game. Keep the receiver open during foreground transfer. Retry with the same workspace and `make transfer` to resume, then install/launch after transfer completes.
+
+**Do not uninstall an existing receiver/game as a retry.** Unknown manually installed app ownership stops for a migration decision. Keep the workspace: it retains transfer checkpoints and installation provenance. For background transfer, later host updates and troubleshooting, read the [full automation guide](https://github.com/johnrtipton/visirupt/blob/feat/native-cyberpunk-pipeline/docs/automation.md) and [acceptance status](docs/automation.md).
+
 ## Start here
 
 - [Native automation preview](docs/automation.md): reviewed source PR, commands and separate acceptance gates.
